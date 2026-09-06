@@ -1,4 +1,8 @@
+<div align="center">
+  
 # Data Dictionary
+
+</div>
 
 ### Understanding the tables
 
@@ -9,7 +13,7 @@
 | interactions.csv | 100,000 | 8 | One digital/in-store customer activity |
 | transactions.csv | 32,295 | 10 | One completed purchase transaction |
 
-### Table 01: Campaigns
+### 🗠 Table 01: Campaigns
 
 | Column | Description | Expected Type | Actual Type | Business Meaning | Action |
 |---|---|---|---|---|---|
@@ -24,7 +28,7 @@
 | conversion_rate | Conversions/clicks, given directly | float | float | Efficiency metric | Retain, validate |
 | roi | Return on investment, given directly | float | float | Cannot be independently validated (no column to check it against) | Retain, flag as unverifiable |
 
-### Table 02: Customers
+### 🗠 Table 02: Customers
 
 | Column | Description | Expected Type | Actual Type | Business Meaning | Action |
 |---|---|---|---|---|---|
@@ -37,7 +41,7 @@
 | registration_date | Signup date | date | str | Tenure, cohort analysis | Transform into date |
 | preferred_channel | Stated channel preferrence | str | str | Compare stated vs. actual | Retaim |
 
-### Table 03: Interactions
+### 🗠 Table 03: Interactions
 
 | Column | Description | Expected Type | Actual Type | Business Meaning | Action |
 |---|---|---|---|---|---|
@@ -50,7 +54,7 @@
 | page_or_product | What was viewed / interacted with | str | str | Product / page interest | Retain |
 | session_id | Groups interactions into a visit | str | str | Session-level funnel construction | Retain |
 
-### Table 04: Transactions
+### 🗠 Table 04: Transactions
 
 | Column | Description | Expected Type | Actual Type | Business Meaning | Action |
 |---|---|---|---|---|---|

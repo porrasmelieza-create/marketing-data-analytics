@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🗠 Marketing Data Analytics Portfolio
+# 🗠 Data Analytics Portfolio
 </div>
 
 Welcome to my Data Analytics Portfolio! 👋

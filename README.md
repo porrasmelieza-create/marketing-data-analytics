@@ -12,19 +12,15 @@ The projects in this portfolio demonstrate my ability to work through the full d
 ## 🗁 Featured Projects
 | # | Project | Focus | Tools |
 |---|---|---|---|
-| **01** | [**Ad Campaign Performance Analysis**](./01-Ad-Campaign-Performance) | Campaign performance, ROI & budget optimization | Excel · SQL · Power BI |
-| **02** | [**Customer Segmentation**](./02-Customer-Segmentation) | Customer behavior, profiling & targeting | Python · SQL · Excel |
-| **03** | [**Website Conversion Funnel Analysis**](./03-Website-Conversion-Funnel) | User behavior, conversion & funnel drop-offs | SQL · Python · Power BI |
-| **04** | [**A/B Testing**](./04-AB-Testing) | Experimentation & conversion optimization | Python · Statistics · SQL |
-| **05** | [**Keyword & Search Trend Analysis**](./05-Keyword-Search-Analysis) | Search behavior, trends & content opportunities | Excel · Python · Google Trends |
-
+| **01** | [**Ad Campaign Performance Analysis**](./01-Ad-Campaign-Performance) | Campaign efficiency, ustomer revenue behavior & budget allocation *(includes handling a real-world data limitation: no shared key between campaign and customer data)* | Excel · SQL · Power BI |
+| **02** | [**Customer Segmentation**](./02-Customer-Segmentation) | Customer behavior, profiling & targeting | Excel · SQL · Power BI |
 
 ## ⚙︎ Tools & Skills
 
 **Data Analysis:** Excel, SQL, Python  
-**Visualization:** Power BI, Excel  
-**Statistics:** Hypothesis Testing, A/B Testing, Regression, Descriptive Statistics  
-**Marketing Analytics:** Campaign Performance, Customer Segmentation, Conversion Analysis, Trend Analysis  
+**Visualization:** Power BI, Excel, Powerpoint  
+**Statistics:** Hypothesis Testing, Regression, Descriptive Statistics  
+**Marketing Analytics:** Campaign Performance, Customer Segmentation
 
 ## ★ About Me
 

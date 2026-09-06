@@ -7,7 +7,7 @@ Welcome to my Data Analytics Portfolio! 👋
 
 This repository showcases my projects and experience in data analysis, marketing analytics, and customer insights. With a background in Applied Mathematics and experience in social media and creative work, I am interested in using data to understand customer behavior, evaluate marketing performance, and support data-driven business decisions.
 
-End-to-end analytics projects covering data cleaning, SQL analysis, data modeling, and Power BI dashboarding. Both projects below are built from the same source dataset and share one cleaning pipeline and one Power BI file — see shared-data-pipeline/ for the common groundwork behind both.
+Below are end-to-end analytics projects covering data cleaning, SQL analysis, data modeling, and Power BI dashboarding. Both projects are built from the same source dataset and share one cleaning pipeline and one Power BI file — [`shared-data-pipeline/`](./shared-data-pipeline) for the common groundwork behind both.
 
 ## 🗁 Featured Projects
 | # | Project | Description | Tools |

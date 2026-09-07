@@ -22,13 +22,13 @@ During initial data exploration, I found that the campaign data shares no key wi
 Both projects draw from the same raw data, cleaning scripts, data model, and dashboard file:
 ```
 shared-data-pipeline/
-├── data/raw/              ← original 4 CSVs, untouched
+├── data/raw/
 ├── sql/
 │   ├── 01_staging_and_cleaning.sql
 │   └── 02_data_model_build.sql
-├── excel/                 ← EDA and Power Query workbooks
+├── excel/
 └── powerbi/
-    ├── campaign_and_revenue_dashboard.pbix   ← one file, both tracks
+    ├── marketing_dashboard.pbix
     └── screenshots/
 ```
 See each project's README for track-specific business questions, SQL, findings, and recommendations.

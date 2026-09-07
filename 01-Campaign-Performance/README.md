@@ -60,7 +60,7 @@ Full script: [`shared-data-pipeline/sql/01_staging_and_cleaning.sql`](https://gi
 
 ## SQL Analysis
 
-Full query set: [`sql/03_campaign_business_questions.sql`](./sql/03_campaign_business_questions.sql).
+Full query set: [`sql/03_campaign_business_questions.sql`](https://github.com/porrasmelieza-create/marketing-data-analytics/blob/main/01-Campaign-Performance/03_campaign_business_questions.sql).
 
 **Q1: Which campaign types have the lowest cost per conversion?**
 ```sql
@@ -124,10 +124,12 @@ The highest-converting segments include groups like re-engagement-oriented audie
 
 ../shared-data-pipeline/                         ← shared with Customer & Revenue Analysis
 ├── data/raw/
+├── documentation/
+├── excel/
+│   └── EDA_Workbook.xlsx
 ├── sql/
 │   ├── 01_staging_and_cleaning.sql
 │   └── 02_data_model_build.sql
-├── excel/
 └── powerbi/
     ├── marketing_dashboard.pbix
     └── screenshots/

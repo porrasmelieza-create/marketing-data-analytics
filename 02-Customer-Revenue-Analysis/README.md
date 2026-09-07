@@ -73,7 +73,7 @@ All ratio-based DAX measures use `DIVIDE()` rather than the `/` operator, delibe
 
 ## SQL Analysis
 
-Full query set: [`sql/03_customer_revenue_business_questions.sql`](./sql/03_customer_revenue_business_questions.sql).
+Full query set: [`sql/03_customer_revenue_business_questions.sql`](https://github.com/porrasmelieza-create/marketing-data-analytics/blob/main/02-Customer-Revenue-Analysis/03_customer_revenue_business_questions.sql).
 
 **Behavioral conversion rate — a real, measurable substitute for unverifiable campaign ROAS**
 ```sql
@@ -110,7 +110,7 @@ An unknown discount is treated as 0% only inside this specific calculation — `
 
 ## Power BI Dashboard
 
-Dashboard file (shared with the companion project): [`shared-data-pipeline/powerbi/campaign_and_revenue_dashboard.pbix`](https://github.com/porrasmelieza-create/marketing-data-analytics/blob/main/shared-data-pipeline/powerbi/marketing_dashboard.pbix). Screenshots: [`shared-data-pipeline/powerbi/screenshots`](../shared-data-pipeline/powerbi/screenshots).
+Dashboard file (shared with the companion project): [`shared-data-pipeline/powerbi/campaign_and_revenue_dashboard.pbix`](https://github.com/porrasmelieza-create/marketing-data-analytics/blob/main/shared-data-pipeline/powerbi/marketing_dashboard.pbix). Screenshots: [`shared-data-pipeline/powerbi/screenshots`](https://github.com/porrasmelieza-create/marketing-data-analytics/tree/main/shared-data-pipeline/powerbi/screenshots).
 
 **Executive Overview** — Revenue KPIs shown alongside campaign KPIs but visually separated (divider, distinct card colors), so the two tracks are never implied to be related. Monthly revenue trend is the anchor time-series visual.
 
@@ -156,10 +156,12 @@ Flagged honestly as a likely characteristic of a synthetic/practice dataset rath
 
 ../shared-data-pipeline/                         ← shared with Campaign Performance Analysis
 ├── data/raw/
+├── documentation
+├── excel/
+    └── EDA_Workbook.xlsx
 ├── sql/
 │   ├── 01_staging_and_cleaning.sql
 │   └── 02_data_model_build.sql
-├── excel/
 └── powerbi/
     ├── campaign_and_revenue_dashboard.pbix
     └── screenshots/

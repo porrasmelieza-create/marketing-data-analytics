@@ -24,6 +24,14 @@ A marketing team needs to know which campaign types deliver efficient conversion
 
 Full source and cleaning details for all four project files live in [`shared-data-pipeline`](https://github.com/porrasmelieza-create/marketing-data-analytics/tree/main/shared-data-pipeline).
 
+## Tools Used
+ 
+| Tool | Used for |
+|---|---|
+| Excel / Power Query | Exploratory data analysis, formula-based data quality checks |
+| Microsoft SQL Server | Primary cleaning pipeline, data modeling, validated business-question queries |
+| Power BI | Data modeling, DAX measures, three-page interactive dashboard |
+
 ## Data Cleaning Highlights
 
 Full script: [`shared-data-pipeline/sql/01_staging_and_cleaning.sql`](https://github.com/porrasmelieza-create/marketing-data-analytics/blob/main/shared-data-pipeline/sql/01_staging_and_cleaning.sql)

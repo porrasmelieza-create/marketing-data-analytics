@@ -19,7 +19,7 @@ SELECT
     COUNT(roi)                    AS roi_filled
 FROM dbo.tbl_campaigns;
 
-SELECT
+SELECT  
     campaign_id,
     COUNT(*) AS duplicate_count
 FROM dbo.tbl_campaigns
@@ -101,8 +101,6 @@ HAVING COUNT(*) > 1;
 -- ============================================
 -- 2A. Campaigns
 
-DROP TABLE IF EXISTS dbo.Campaigns_Clean;
-
 SELECT
     campaign_id,
     NULLIF(TRIM(campaign_name), '')                                AS campaign_name,
@@ -113,8 +111,7 @@ SELECT
     TRY_CAST(clicks AS INT)                                        AS clicks,
     TRY_CAST(conversions AS INT)                                   AS conversions,
 
-    -- conversion_rate recalculated from clicks/conversions where both exist,
-    -- rather than trusting a possibly-stale source column
+    -- conversion_rate recalculated from clicks/conversions where both exist
     CASE
         WHEN TRY_CAST(clicks AS INT) > 0
             THEN ROUND(TRY_CAST(conversions AS FLOAT) * 100.0 / TRY_CAST(clicks AS INT), 2)
@@ -124,15 +121,14 @@ SELECT
     TRY_CAST(start_date AS DATE)                                   AS start_date,
     TRY_CAST(end_date AS DATE)                                     AS end_date,
 
-    -- roi is a given, unverifiable figure — passed through as-is, never recalculated,
-    -- since no revenue column exists anywhere in campaign data to check it against
+    -- roi was not recalculated since no revenue column exists in campaign data to check it against
+    
     TRY_CAST(roi AS DECIMAL(10,2))                                 AS roi
 
 INTO dbo.Campaigns_Clean
 FROM dbo.tbl_campaigns;
 
 -- 2B. Customers
-DROP TABLE IF EXISTS dbo.Customers_Clean;
 
 SELECT
     customer_id,
@@ -145,9 +141,6 @@ SELECT
     NULLIF(TRIM(city), '')                                         AS city,
     ISNULL(NULLIF(TRIM(state), ''), 'Unknown')                     AS state,
 
-    -- zip_code reformatted to zero-padded text; if the source stored zip as numeric,
-    -- any leading zero was already lost before this step and cannot be recovered here —
-    -- this only prevents FURTHER loss going forward
     RIGHT('00000' + CAST(TRY_CAST(zip_code AS INT) AS VARCHAR(5)), 5) AS zip_code,
 
     TRY_CAST(registration_date AS DATE)                            AS registration_date,
@@ -157,8 +150,6 @@ INTO dbo.Customers_Clean
 FROM dbo.tbl_customers;
 
 -- 2C. Interactions
-
-DROP TABLE IF EXISTS dbo.Interactions_Clean;
 
 SELECT
     interaction_id,
@@ -175,8 +166,6 @@ FROM dbo.tbl_interactions;
 
 -- 2D. Transactions
 
-DROP TABLE IF EXISTS dbo.Transactions_Clean;
-
 SELECT
     transaction_id,
     customer_id,
@@ -186,8 +175,7 @@ SELECT
     TRY_CAST(price AS DECIMAL(10,2))                                 AS price,
     TRY_CAST(transaction_date AS DATE)                               AS transaction_date,
 
-    -- Splitting store_location into channel_type + city + state 
-    -- Reason behind the decision: "Online" and "City, ST" are two different grains in one column
+    -- store_location was split into channel_type + city + state because "Online" and "City, ST" are two different grains in one column
     
     CASE
         WHEN TRIM(store_location) = 'Online' THEN 'Online'
@@ -207,8 +195,8 @@ SELECT
 
     ISNULL(NULLIF(TRIM(payment_method), ''), 'Unknown') AS payment_method,
 
-    /*  Impossible impossible discount values are clipped to NULL instead of letting bad data
-        flow into Fact table. Genuinely missing discounts are considered as NULL too instead
+    /*  Impossible discount values are clipped to NULL instead of letting bad data flow
+        into Fact table. Genuinely missing discounts are considered as NULL too instead
         of taking the missing discounts as 0 by default.    */
 
     CASE
@@ -217,12 +205,8 @@ SELECT
         ELSE NULL
     END AS discount_applied
 
-
 INTO dbo.Transactions_Clean
 FROM dbo.tbl_transactions;
-
-DROP VIEW IF EXISTS dbo.vw_Transactions_Revenue;
-GO
 
 CREATE VIEW vw_Transactions_Revenue AS
 SELECT *,
